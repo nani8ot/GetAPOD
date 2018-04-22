@@ -7,7 +7,7 @@ import easyFiles.ReadProperties;
 public class DownloadPictureMain {
 
 	public static void main(String[] args) throws Exception {
-		String propertiesPath = "GetNASAPictures.conf";
+		String propertiesPath = "GetAPOD.conf";
 		
 		System.out.println("Working Directory = " + System.getProperty("user.dir")); // debug
 		
