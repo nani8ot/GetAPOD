@@ -4,6 +4,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Eigentlich zum Auslesen von .conf erstellt... gibts odch eh schon XD
+ * @author aaron
+ *
+ */
+
+
 public class ReadFiles {
 	public String loadFile(String path) {
 		BufferedReader in = null;

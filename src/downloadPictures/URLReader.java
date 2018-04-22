@@ -32,6 +32,7 @@ public class URLReader {
         
         String relativePictureUrl = inputLine.substring(starts1, ends1);
         String pictureUrl = htmlUrl.toString().substring(starts2, ends2).concat(relativePictureUrl);
+        System.out.println("URLReader aufgerufen.");
         return new URL(pictureUrl);
     }
     

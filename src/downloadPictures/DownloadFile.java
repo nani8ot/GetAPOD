@@ -22,7 +22,11 @@ public class DownloadFile {
 		while ((length = is.read(b)) != -1) {
 			os.write(b, 0, length);
 
-			final long timeEnd = System.currentTimeMillis(); // if & final are debug
+			
+			/**
+			 * shows the time of the download
+			 */
+			final long timeEnd = System.currentTimeMillis();
 			if (i != (timeEnd / 1000)) {
 				System.out.println("Verlaufszeit der Schleife: " + ((timeEnd - timeStart) / 1000) + "s.");
 				i = (timeEnd / 1000);
