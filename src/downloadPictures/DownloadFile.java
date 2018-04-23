@@ -10,7 +10,6 @@ public class DownloadFile {
 	
 	public void getFile(String url, String propertiesPath) throws IOException {
 		InputStream is = new URL(url).openStream();
-		System.out.println(url.lastIndexOf("/"));
 		OutputStream os = new FileOutputStream( "Images\\" + (url.substring(url.lastIndexOf("/") +1)) ); // Get File Name and name the file
 		
 		byte[] b = new byte[2048];

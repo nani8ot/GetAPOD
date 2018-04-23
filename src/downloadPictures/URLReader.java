@@ -27,8 +27,6 @@ public class URLReader {
         
         int starts1 = inputLine.indexOf('"') +1;
         int ends1 = inputLine.lastIndexOf('"');
-        System.out.println("Relative Link of inputLine starts at: " + starts1);
-        System.out.println("Relative Link of inputLine ends at: " + ends1);
         
         String relativePictureUrl = inputLine.substring(starts1, ends1);
         String pictureUrl = htmlUrl.toString().substring(starts2, ends2).concat(relativePictureUrl);
