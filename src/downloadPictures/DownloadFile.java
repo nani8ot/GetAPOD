@@ -28,12 +28,13 @@ public class DownloadFile {
 			 */
 			final long timeEnd = System.currentTimeMillis();
 			if (i != (timeEnd / 1000)) {
-				System.out.println("Verlaufszeit der Schleife: " + ((timeEnd - timeStart) / 1000) + "s.");
+				System.out.print("-");
 				i = (timeEnd / 1000);
 			}
 		}
 		final long timeEnd = System.currentTimeMillis();
-		System.out.println("Verlaufszeit der Schleife: " + ((timeEnd - timeStart) / 1000) + "s.");
+		System.out.println();
+		System.out.println("Verlaufszeit des Downloads: " + ((timeEnd - timeStart) / 1000) + "s.");
 		
 		is.close();
 		os.close();
