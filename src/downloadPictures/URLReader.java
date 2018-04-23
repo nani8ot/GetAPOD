@@ -8,7 +8,7 @@ import easyFiles.ReadProperties;
 public class URLReader {
     
 	public String getUrlFileLine(String keyword, URL htmlUrl, String propertiesPath) throws Exception {
-        BufferedReader in = new BufferedReader(
+        final BufferedReader in = new BufferedReader(
         new InputStreamReader(htmlUrl.openStream()));
 
         String inputLine;
@@ -22,14 +22,14 @@ public class URLReader {
 //        int ends1 = inputLine.length() + (Integer.parseInt (new ReadProperties().getProperties(propertiesPath, "ends1")));
 //        int starts1 = Integer.parseInt(new ReadProperties().getProperties(propertiesPath, "starts1"));
         
-        int ends2 = Integer.parseInt (new ReadProperties().getProperties(propertiesPath, "ends2"));
-        int starts2 = Integer.parseInt(new ReadProperties().getProperties(propertiesPath, "starts2"));
+        final int ends2 = Integer.parseInt (new ReadProperties().getProperties(propertiesPath, "ends2"));
+        final int starts2 = Integer.parseInt(new ReadProperties().getProperties(propertiesPath, "starts2"));
         
-        int starts1 = inputLine.indexOf('"') +1;
-        int ends1 = inputLine.lastIndexOf('"');
+        final int starts1 = inputLine.indexOf('"') +1;
+        final int ends1 = inputLine.lastIndexOf('"');
         
-        String relativePictureUrl = inputLine.substring(starts1, ends1);
-        String pictureUrl = htmlUrl.toString().substring(starts2, ends2).concat(relativePictureUrl);
+        final String relativePictureUrl = inputLine.substring(starts1, ends1);
+        final String pictureUrl = htmlUrl.toString().substring(starts2, ends2).concat(relativePictureUrl);
         System.out.println("URLReader aufgerufen.");
         return pictureUrl;
     }

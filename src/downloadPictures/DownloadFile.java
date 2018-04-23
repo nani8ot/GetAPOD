@@ -9,10 +9,10 @@ import java.net.URL;
 public class DownloadFile {
 	
 	public void getFile(String url, String propertiesPath) throws IOException {
-		InputStream is = new URL(url).openStream();
-		OutputStream os = new FileOutputStream( "Images\\" + (url.substring(url.lastIndexOf("/") +1)) ); // Get File Name and name the file
+		final InputStream is = new URL(url).openStream();
+		final OutputStream os = new FileOutputStream( "Images\\" + (url.substring(url.lastIndexOf("/") +1)) ); // Get File Name and name the file
 		
-		byte[] b = new byte[2048];
+		final byte[] b = new byte[2048];
 		int length;
 		long i = -1;
 		final long timeStart = System.currentTimeMillis();
