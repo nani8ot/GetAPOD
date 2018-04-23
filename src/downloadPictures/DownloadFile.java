@@ -6,14 +6,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 
-import easyFiles.ReadProperties;
-
 public class DownloadFile {
-	public void getFile(URL fileUrl, String propertiesPath) throws IOException {
-		InputStream is = fileUrl.openStream();
-		int indexOfFileName = Integer.parseInt(new ReadProperties().getProperties(propertiesPath, "imageNameIndex"));
-		System.out.println(fileUrl.toString().substring(38));
-		OutputStream os = new FileOutputStream( "Images\\" + (fileUrl.toString().substring(indexOfFileName)) ); // Get File Name and name the file
+	
+	public void getFile(String url, String propertiesPath) throws IOException {
+		InputStream is = new URL(url).openStream();
+		System.out.println(url.lastIndexOf("/"));
+		OutputStream os = new FileOutputStream( "Images\\" + (url.substring(url.lastIndexOf("/") +1)) ); // Get File Name and name the file
 		
 		byte[] b = new byte[2048];
 		int length;

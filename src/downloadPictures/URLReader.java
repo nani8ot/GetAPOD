@@ -7,7 +7,7 @@ import easyFiles.ReadProperties;
 
 public class URLReader {
     
-	public URL getUrlFileLine(String keyword, URL htmlUrl, String propertiesPath) throws Exception {
+	public String getUrlFileLine(String keyword, URL htmlUrl, String propertiesPath) throws Exception {
         BufferedReader in = new BufferedReader(
         new InputStreamReader(htmlUrl.openStream()));
 
@@ -33,7 +33,7 @@ public class URLReader {
         String relativePictureUrl = inputLine.substring(starts1, ends1);
         String pictureUrl = htmlUrl.toString().substring(starts2, ends2).concat(relativePictureUrl);
         System.out.println("URLReader aufgerufen.");
-        return new URL(pictureUrl);
+        return pictureUrl;
     }
     
 

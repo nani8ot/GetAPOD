@@ -11,7 +11,7 @@ public class DownloadPictureMain {
 		
 		System.out.println("Working Directory = " + System.getProperty("user.dir")); // debug
 		
-		URL urlLine = new URLReader().getUrlFileLine(new ReadProperties().getProperties(propertiesPath, "keyword"), new URL(new ReadProperties().getProperties(propertiesPath, "url")), propertiesPath);
+		String urlLine = new URLReader().getUrlFileLine(new ReadProperties().getProperties(propertiesPath, "keyword"), new URL(new ReadProperties().getProperties(propertiesPath, "url")), propertiesPath);
 		System.out.println(urlLine); // debug
 		new DownloadFile().getFile(urlLine, propertiesPath);
 		
