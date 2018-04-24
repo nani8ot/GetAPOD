@@ -19,8 +19,6 @@ public class URLReader {
         }
         in.close();
         System.out.println("InputLine: " + inputLine); // debug
-//        int ends1 = inputLine.length() + (Integer.parseInt (new ReadProperties().getProperties(propertiesPath, "ends1")));
-//        int starts1 = Integer.parseInt(new ReadProperties().getProperties(propertiesPath, "starts1"));
         
         final int ends2 = Integer.parseInt (new ReadProperties().getProperties(propertiesPath, "ends2"));
         final int starts2 = Integer.parseInt(new ReadProperties().getProperties(propertiesPath, "starts2"));

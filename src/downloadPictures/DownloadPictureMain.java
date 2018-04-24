@@ -1,6 +1,7 @@
 package downloadPictures;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.util.Date;
@@ -12,9 +13,20 @@ import easyFiles.ReadProperties;
 
 public class DownloadPictureMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] Args) throws IOException {
 		final String propertiesPath = "GetAPOD.conf";
 		final String logPath = "GetApod.log";
+		
+		if ((new ReadProperties().getProperties(propertiesPath, "fromTo")) == "null") {
+			new DownloadPictureMain().getAPOD(propertiesPath, logPath);
+		} else if ((new ReadProperties().getProperties(propertiesPath, "fromTo")) != "null") {
+			new DownloadPictureMain().getAPOD(propertiesPath, logPath);
+		}
+		
+		
+	}
+	
+	public void getAPOD(String propertiesPath, String logPath) {
 		
 		System.out.println("Working Directory = " + System.getProperty("user.dir")); // debug
 		
